@@ -32,8 +32,16 @@ public class Application {
 
         //입력 문자열을 구분자로 나누고 더하는 기능
         String[] splitString = inputString.split(delimiter.getDelimiter());
-        List<Integer> integerList = stream(splitString).map(Integer::parseInt).toList();
+        List<Integer> integerList = stream(splitString)
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .map(Integer::parseInt)
+                .toList();
         for (Integer num : integerList) {
+            //음수인 경우 예외 발생
+            if (num < 0) {
+                throw new IllegalArgumentException("음수가 입력되었습니다.");
+            }
             result += num;
         }
 
