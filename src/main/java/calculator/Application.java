@@ -17,9 +17,17 @@ public class Application {
         int result = 0;
 
         //입력 문자열이 null이나 공백인 경우
-        if (inputString == null || inputString.isEmpty()) {
+        if (inputString.isEmpty()) {
             System.out.println("결과 : " + result);
             return;
+        }
+
+        //커스텀 구분자 추가 기능
+        if (inputString.startsWith("//")) {
+            int separateIndex = inputString.indexOf("\\n");
+            String customDelimiter = inputString.substring(2, separateIndex);
+            inputString = inputString.substring(separateIndex + 2);
+            delimiter.addDelimiter(customDelimiter);
         }
 
         //입력 문자열을 구분자로 나누고 더하는 기능
@@ -28,6 +36,7 @@ public class Application {
         for (Integer num : integerList) {
             result += num;
         }
+
         System.out.println("결과 : " + result);
         Console.close();
     }
