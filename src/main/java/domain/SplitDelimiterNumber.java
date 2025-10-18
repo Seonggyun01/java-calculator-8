@@ -38,7 +38,13 @@ public class SplitDelimiterNumber {
         if (inputString.startsWith("//")) {
             int separateIndex = inputString.indexOf("\\n");
             String customDelimiter = inputString.substring(2, separateIndex);
-            delimiter.addDelimiter(customDelimiter);
+            if (!customDelimiter.equals("-")) {
+                delimiter.addDelimiter(customDelimiter);
+            }
+            if (customDelimiter.equals("-")) {
+                inputString = inputString.replaceAll("--", ",-");
+            }
+            System.out.println(inputString);
             return inputString.substring(separateIndex + 2);
         }
         return inputString;
