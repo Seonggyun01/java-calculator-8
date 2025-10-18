@@ -1,7 +1,9 @@
-package domain;
+package controller;
 
 import static java.util.Arrays.stream;
 
+import domain.Delimiter;
+import domain.StringNumber;
 import java.util.List;
 
 public class SplitDelimiterNumber {

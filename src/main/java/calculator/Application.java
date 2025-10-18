@@ -1,7 +1,7 @@
 package calculator;
 
 import camp.nextstep.edu.missionutils.Console;
-import domain.SplitDelimiterNumber;
+import controller.SplitDelimiterNumber;
 
 public class Application {
     public static void main(String[] args) {
