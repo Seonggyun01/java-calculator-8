@@ -3,7 +3,7 @@ package controller;
 import static java.util.Arrays.stream;
 
 import domain.Delimiter;
-import domain.StringNumber;
+import domain.NumberLIst;
 import java.util.List;
 
 public class SplitDelimiterNumber {
@@ -17,7 +17,7 @@ public class SplitDelimiterNumber {
         inputString = extractNewDelimiter(inputString);
         List<Integer> integerList = getIntegerList(inputString);
 
-        return new StringNumber(integerList).addCalculate();
+        return new NumberLIst(integerList).addCalculate();
     }
 
     /*

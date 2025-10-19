@@ -2,11 +2,11 @@ package domain;
 
 import java.util.List;
 
-public class StringNumber {
+public class NumberLIst {
 
     private List<Integer> numbers;
 
-    public StringNumber(List<Integer> numbers) {
+    public NumberLIst(List<Integer> numbers) {
         this.numbers = numbers;
     }
 
