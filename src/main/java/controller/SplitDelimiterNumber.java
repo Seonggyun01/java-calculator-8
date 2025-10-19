@@ -3,7 +3,7 @@ package controller;
 import static java.util.Arrays.stream;
 
 import domain.Delimiter;
-import domain.NumberLIst;
+import domain.NumberList;
 import java.util.List;
 
 public class SplitDelimiterNumber {
@@ -17,11 +17,13 @@ public class SplitDelimiterNumber {
         inputString = extractNewDelimiter(inputString);
         List<Integer> integerList = getIntegerList(inputString);
 
-        return new NumberLIst(integerList).addCalculate();
+        return new NumberList(integerList).addCalculate();
     }
 
     /*
-     * 입력 문자열을 구분자로 나누고 더하는 기능
+     * 입력 문자열을 구분자로 나누는 기능
+     * input(String)
+     * output(List<Integer>)
      */
     private List<Integer> getIntegerList(String inputString) {
         String[] splitString = inputString.split(delimiter.getDelimiter());
